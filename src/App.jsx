@@ -51,6 +51,15 @@ export default function App() {
 
         <SortControls currentValue={sortBy} onChange={setSortBy} />
 
+        <section className="ranking-head" aria-hidden="true">
+          <span className="ranking-head__label">Rank</span>
+          <span className="ranking-head__label">Candidatura</span>
+          <span className="ranking-head__label">Encuesta / tendencia</span>
+          <span className="ranking-head__label ranking-head__label--score">
+            Score
+          </span>
+        </section>
+
         <section className="ranking-list" aria-label="Ranking de candidatos">
           {rankedCandidates.map((candidate, index) => {
             const isExpanded = selectedName === candidate.name;

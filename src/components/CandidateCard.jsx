@@ -1,6 +1,6 @@
 import { ScoreBar } from "./ScoreBar";
 import { TrendBadge } from "./TrendBadge";
-import { getScoreTone } from "../lib/scorecard";
+import { getMetricTone, getScoreTone } from "../lib/scorecard";
 
 function buildNotesList(notes) {
   return notes
@@ -34,9 +34,7 @@ export function CandidateCard({
         aria-controls={detailsId}
       >
         <div className="candidate-card__rank-block" aria-hidden="true">
-          <span className={`candidate-rank${rank <= 3 ? " is-podium" : ""}`}>
-            #{String(rank).padStart(2, "0")}
-          </span>
+          <span className="candidate-rank">#{String(rank).padStart(2, "0")}</span>
         </div>
 
         <div className="candidate-card__summary candidate-card__summary--identity">
@@ -50,23 +48,20 @@ export function CandidateCard({
         </div>
 
         <div className="candidate-card__summary candidate-card__summary--metrics">
-          <span className="candidate-card__eyebrow">Señal electoral</span>
           <div className="candidate-card__meta">
             <span className="candidate-card__poll">
-              <span className="candidate-card__meta-label">Encuesta</span>
-              <strong>{candidate.encuesta}%</strong>
+              Encuesta <strong>{candidate.encuesta.toFixed(1)}%</strong>
             </span>
             <TrendBadge trend={candidate.tendencia} />
           </div>
         </div>
 
         <div className="candidate-card__score">
-          <span className="candidate-card__score-label">Score / 100</span>
           <strong
             className="candidate-card__score-value"
             style={{ color: scoreTone }}
           >
-            {candidate.finalScore}
+            {candidate.finalScore.toFixed(1)}
           </strong>
           <ScoreBar
             value={candidate.finalScore}
@@ -107,7 +102,7 @@ export function CandidateCard({
                 </div>
                 <ScoreBar
                   value={candidate.scores[criterion.key]}
-                  color={candidate.color}
+                  color={getMetricTone(candidate.scores[criterion.key])}
                 />
               </div>
             ))}

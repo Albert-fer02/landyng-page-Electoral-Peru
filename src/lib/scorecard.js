@@ -30,10 +30,24 @@ export function rankCandidates(candidates, criteria, sortBy) {
 
 export function getScoreTone(score) {
   if (score >= 60) {
-    return "var(--accent)";
+    return "var(--positive)";
   }
 
   if (score >= 45) {
+    return "var(--warning)";
+  }
+
+  return "var(--danger)";
+}
+
+export function getMetricTone(score, max = 10) {
+  const normalizedScore = (score / max) * 100;
+
+  if (normalizedScore >= 70) {
+    return "var(--positive)";
+  }
+
+  if (normalizedScore >= 40) {
     return "var(--warning)";
   }
 
