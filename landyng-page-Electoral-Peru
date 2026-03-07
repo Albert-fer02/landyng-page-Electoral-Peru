@@ -1,0 +1,406 @@
+import { useState } from "react";
+
+const candidates = [
+  {
+    name: "Rafael López Aliaga",
+    party: "Renovación Popular",
+    color: "#00BFFF",
+    scores: {
+      experiencia: 6,
+      propuesta_tech: 2,
+      anticorrupcion: 3,
+      seguridad: 5,
+      descentralizacion: 3,
+      viabilidad: 9,
+      equipo_tecnico: 4,
+      integridad: 4,
+      gobernabilidad: 6,
+      plan_concreto: 3,
+    },
+    encuesta: 13.9,
+    tendencia: "estable",
+    notas: "Líder en encuestas. Exalcalde de Lima. Fuerte en Lima (21%), débil en interior. Discurso populista-conservador. Sin propuesta tecnológica sustantiva. Bancada proyectada moderada.",
+    riesgo: "Polarización, discurso errático, débil en propuesta técnica",
+  },
+  {
+    name: "Keiko Fujimori",
+    party: "Fuerza Popular",
+    color: "#FF6B00",
+    scores: {
+      experiencia: 7,
+      propuesta_tech: 3,
+      anticorrupcion: 2,
+      seguridad: 5,
+      descentralizacion: 4,
+      viabilidad: 8,
+      equipo_tecnico: 6,
+      integridad: 2,
+      gobernabilidad: 7,
+      plan_concreto: 5,
+    },
+    encuesta: 7.0,
+    tendencia: "estable",
+    notas: "Cuarta candidatura presidencial. Investigada por lavado de activos (caso Lavamoto). Mayor antivoto del campo (54%). Bancada parlamentaria fuerte. Equipo técnico experimentado.",
+    riesgo: "Antivoto masivo, proceso penal activo, legado autoritario",
+  },
+  {
+    name: "Alfonso López Chau",
+    party: "Ahora Nación",
+    color: "#E63946",
+    scores: {
+      experiencia: 6,
+      propuesta_tech: 6,
+      anticorrupcion: 5,
+      seguridad: 5,
+      descentralizacion: 7,
+      viabilidad: 6,
+      equipo_tecnico: 5,
+      integridad: 5,
+      gobernabilidad: 5,
+      plan_concreto: 6,
+    },
+    encuesta: 5.1,
+    tendencia: "subiendo",
+    notas: "Exrector UNI, doctor en Economía (UNAM). Propone ciencia y tecnología como motor productivo, modelo de 5 hélices. Mayor crecimiento en encuestas (1.8% → 5.1%). Acusado por Ministerio Público por presunta colusión en UNI.",
+    riesgo: "Proceso penal pendiente, partido nuevo sin estructura consolidada",
+  },
+  {
+    name: "Mario Vizcarra",
+    party: "Perú Primero",
+    color: "#2A9D8F",
+    scores: {
+      experiencia: 4,
+      propuesta_tech: 4,
+      anticorrupcion: 4,
+      seguridad: 4,
+      descentralizacion: 5,
+      viabilidad: 5,
+      equipo_tecnico: 4,
+      integridad: 4,
+      gobernabilidad: 4,
+      plan_concreto: 4,
+    },
+    encuesta: 4.7,
+    tendencia: "bajando",
+    notas: "Hermano del expresidente Martín Vizcarra. Fuerte en sector rural y oriente. Perfil más centrado en infraestructura que en innovación. Voto joven.",
+    riesgo: "Asociación con hermano judicializado, propuestas genéricas",
+  },
+  {
+    name: "César Acuña",
+    party: "Alianza para el Progreso",
+    color: "#FFB703",
+    scores: {
+      experiencia: 7,
+      propuesta_tech: 3,
+      anticorrupcion: 2,
+      seguridad: 4,
+      descentralizacion: 6,
+      viabilidad: 6,
+      equipo_tecnico: 5,
+      integridad: 2,
+      gobernabilidad: 7,
+      plan_concreto: 4,
+    },
+    encuesta: 4.4,
+    tendencia: "estable",
+    notas: "Empresario educativo, exgobernador de La Libertad. Mayor estructura partidaria del país (APP). Antivoto alto (40%). Múltiples denuncias por plagio académico.",
+    riesgo: "Antivoto alto, escándalos de plagio, percepción de compra de votos",
+  },
+  {
+    name: "Carlos Álvarez",
+    party: "País para Todos",
+    color: "#8338EC",
+    scores: {
+      experiencia: 2,
+      propuesta_tech: 2,
+      anticorrupcion: 3,
+      seguridad: 3,
+      descentralizacion: 3,
+      viabilidad: 5,
+      equipo_tecnico: 2,
+      integridad: 5,
+      gobernabilidad: 2,
+      plan_concreto: 2,
+    },
+    encuesta: 4.0,
+    tendencia: "variable",
+    notas: "Humorista con alta recordación pública. Sin experiencia en gestión pública. Fenómeno de desconfianza hacia política tradicional. Equipo técnico no identificable.",
+    riesgo: "Cero experiencia ejecutiva, propuestas no verificables",
+  },
+  {
+    name: "Marisol Pérez Tello",
+    party: "Primero La Gente",
+    color: "#06D6A0",
+    scores: {
+      experiencia: 8,
+      propuesta_tech: 7,
+      anticorrupcion: 9,
+      seguridad: 8,
+      descentralizacion: 7,
+      viabilidad: 1,
+      equipo_tecnico: 7,
+      integridad: 9,
+      gobernabilidad: 2,
+      plan_concreto: 8,
+    },
+    encuesta: 0.5,
+    tendencia: "estable",
+    notas: "Exministra de Justicia (PPK), excongresista. Plan más articulado: Autoridad Nacional de Transparencia, unidades de flagrancia, tech + ecología + formalización. Solo 2.22% de listas congresales completadas. Hoja limpia.",
+    riesgo: "Viabilidad electoral nula, sin bancada posible",
+  },
+  {
+    name: "Mesías Guevara",
+    party: "Partido Morado",
+    color: "#7B2D8E",
+    scores: {
+      experiencia: 7,
+      propuesta_tech: 8,
+      anticorrupcion: 7,
+      seguridad: 6,
+      descentralizacion: 7,
+      viabilidad: 2,
+      equipo_tecnico: 6,
+      integridad: 7,
+      gobernabilidad: 3,
+      plan_concreto: 7,
+    },
+    encuesta: 1.5,
+    tendencia: "estable",
+    notas: "Ing. Electrónico. Excongresista (comisión Ciencia y Tech), exgobernador Cajamarca, miembro CONCYTEC/CEPLAN. Propone transformación digital anticorrupción, fusión ministerios, Ministerio de Cultura y Conocimiento. Plan 91% IA-generated.",
+    riesgo: "Baja viabilidad, desgaste marca Morado post-Guzmán, plan posiblemente generado por IA",
+  },
+  {
+    name: "Fiorella Molinelli",
+    party: "Fuerza y Libertad",
+    color: "#457B9D",
+    scores: {
+      experiencia: 7,
+      propuesta_tech: 6,
+      anticorrupcion: 3,
+      seguridad: 5,
+      descentralizacion: 5,
+      viabilidad: 2,
+      equipo_tecnico: 5,
+      integridad: 3,
+      gobernabilidad: 3,
+      plan_concreto: 5,
+    },
+    encuesta: 1.0,
+    tendencia: "estable",
+    notas: "Economista PUCP, experiencia en OSIPTEL/OSINERGMIN/INDECOPI/MIDIS. Propone 'Formalizar para Crecer', justicia digital. Acusada de liderar organización criminal en EsSalud. Plan 92% IA-generated.",
+    riesgo: "Proceso penal grave, plan generado por IA, contradicción ética",
+  },
+  {
+    name: "George Forsyth",
+    party: "Somos Perú",
+    color: "#E76F51",
+    scores: {
+      experiencia: 5,
+      propuesta_tech: 3,
+      anticorrupcion: 4,
+      seguridad: 5,
+      descentralizacion: 4,
+      viabilidad: 3,
+      equipo_tecnico: 4,
+      integridad: 5,
+      gobernabilidad: 4,
+      plan_concreto: 3,
+    },
+    encuesta: 1.9,
+    tendencia: "bajando",
+    notas: "Exalcalde de La Victoria. Perfil mediático. Propuestas centradas en seguridad y verificación de programas sociales. Sin propuesta tecnológica diferenciada.",
+    riesgo: "Desgaste de imagen, propuestas genéricas",
+  },
+];
+
+const criteria = [
+  { key: "propuesta_tech", label: "Tecnología e Innovación", weight: 0.18, desc: "Propuestas concretas en tech, digitalización, innovación productiva" },
+  { key: "anticorrupcion", label: "Anticorrupción", weight: 0.16, desc: "Mecanismos institucionales contra corrupción, transparencia" },
+  { key: "seguridad", label: "Seguridad y Justicia", weight: 0.12, desc: "Reforma judicial, seguridad ciudadana, propuestas ejecutables" },
+  { key: "descentralizacion", label: "Descentralización", weight: 0.08, desc: "Desarrollo territorial, gestión descentralizada" },
+  { key: "viabilidad", label: "Viabilidad Electoral", weight: 0.14, desc: "Intención de voto, tendencia, tracción real" },
+  { key: "gobernabilidad", label: "Gobernabilidad", weight: 0.10, desc: "Capacidad de formar bancada y coaliciones" },
+  { key: "equipo_tecnico", label: "Equipo Técnico", weight: 0.06, desc: "Calidad identificable del equipo detrás" },
+  { key: "integridad", label: "Integridad Personal", weight: 0.08, desc: "Hoja de vida limpia, coherencia ética" },
+  { key: "plan_concreto", label: "Concreción del Plan", weight: 0.05, desc: "Nivel de detalle y ejecutabilidad" },
+  { key: "experiencia", label: "Experiencia Ejecutiva", weight: 0.03, desc: "Gestión pública o privada demostrable" },
+];
+
+function calcScore(candidate, weights) {
+  let total = 0;
+  let totalWeight = 0;
+  weights.forEach(c => {
+    total += candidate.scores[c.key] * c.weight;
+    totalWeight += c.weight;
+  });
+  return ((total / totalWeight) * 10).toFixed(1);
+}
+
+function ScoreBar({ value, max = 10, color }) {
+  const pct = (value / max) * 100;
+  return (
+    <div style={{ width: "100%", height: 6, background: "rgba(255,255,255,0.06)", borderRadius: 3 }}>
+      <div style={{ width: `${pct}%`, height: "100%", background: color, borderRadius: 3, transition: "width 0.5s ease" }} />
+    </div>
+  );
+}
+
+function TrendBadge({ trend }) {
+  const map = { subiendo: { icon: "↑", color: "#06D6A0" }, bajando: { icon: "↓", color: "#E63946" }, estable: { icon: "→", color: "#888" }, variable: { icon: "↕", color: "#FFB703" } };
+  const t = map[trend] || map.estable;
+  return <span style={{ color: t.color, fontWeight: 600, fontSize: 11, letterSpacing: 1 }}>{t.icon} {trend.toUpperCase()}</span>;
+}
+
+export default function ElectionScorecard() {
+  const [selected, setSelected] = useState(null);
+  const [weights, setWeights] = useState(criteria);
+  const [sortBy, setSortBy] = useState("score");
+
+  const ranked = [...candidates].map(c => ({ ...c, finalScore: parseFloat(calcScore(c, weights)) }))
+    .sort((a, b) => sortBy === "score" ? b.finalScore - a.finalScore : b.encuesta - a.encuesta);
+
+  const maxScore = Math.max(...ranked.map(r => r.finalScore));
+
+  return (
+    <div style={{
+      fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif",
+      background: "#0A0A0F",
+      color: "#E0E0E0",
+      minHeight: "100vh",
+      padding: "24px 16px",
+    }}>
+      <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+      
+      {/* Header */}
+      <div style={{ maxWidth: 900, margin: "0 auto", marginBottom: 32 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 8 }}>
+          <div style={{ width: 4, height: 32, background: "linear-gradient(180deg, #00F0FF, #7B2D8E)", borderRadius: 2 }} />
+          <h1 style={{ fontSize: 22, fontWeight: 700, color: "#fff", margin: 0, letterSpacing: -0.5 }}>
+            SCORECARD ELECTORAL PERÚ 2026
+          </h1>
+        </div>
+        <p style={{ fontSize: 12, color: "#666", margin: "8px 0 0 16px", lineHeight: 1.5 }}>
+          Análisis cuantificado de 10 candidatos principales · 10 criterios ponderados · Fuentes: CPI, Ipsos, IEP, Datum (Ene-Feb 2026) · JNE Voto Informado
+        </p>
+      </div>
+
+      {/* Sort Toggle */}
+      <div style={{ maxWidth: 900, margin: "0 auto 16px", display: "flex", gap: 8 }}>
+        {[{k:"score",l:"Por Score Ponderado"},{k:"encuesta",l:"Por Intención de Voto"}].map(s => (
+          <button key={s.k} onClick={() => setSortBy(s.k)} style={{
+            padding: "6px 14px", borderRadius: 6, border: "1px solid", fontSize: 11, fontWeight: 600, cursor: "pointer",
+            background: sortBy === s.k ? "rgba(0,240,255,0.1)" : "transparent",
+            borderColor: sortBy === s.k ? "#00F0FF" : "#333",
+            color: sortBy === s.k ? "#00F0FF" : "#888",
+          }}>{s.l}</button>
+        ))}
+      </div>
+
+      {/* Main Ranking */}
+      <div style={{ maxWidth: 900, margin: "0 auto" }}>
+        {ranked.map((c, i) => {
+          const isOpen = selected === c.name;
+          const isTop = c.finalScore === maxScore;
+          return (
+            <div key={c.name} onClick={() => setSelected(isOpen ? null : c.name)} style={{
+              background: isOpen ? "rgba(255,255,255,0.04)" : "rgba(255,255,255,0.02)",
+              border: `1px solid ${isTop ? c.color + "44" : "#1a1a1a"}`,
+              borderRadius: 10, padding: "14px 18px", marginBottom: 8, cursor: "pointer",
+              transition: "all 0.2s ease",
+            }}>
+              {/* Main Row */}
+              <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+                <div style={{
+                  width: 28, height: 28, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center",
+                  background: i < 3 ? c.color + "22" : "rgba(255,255,255,0.05)",
+                  color: i < 3 ? c.color : "#555", fontSize: 13, fontWeight: 700,
+                  fontFamily: "'JetBrains Mono', monospace",
+                }}>{i + 1}</div>
+                
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+                    <span style={{ fontWeight: 600, fontSize: 14, color: "#fff" }}>{c.name}</span>
+                    <span style={{
+                      fontSize: 10, padding: "2px 8px", borderRadius: 4,
+                      background: c.color + "18", color: c.color, fontWeight: 600,
+                    }}>{c.party}</span>
+                  </div>
+                  <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 4 }}>
+                    <span style={{ fontSize: 11, color: "#888" }}>Encuesta: <span style={{ color: "#ccc", fontFamily: "'JetBrains Mono', monospace" }}>{c.encuesta}%</span></span>
+                    <TrendBadge trend={c.tendencia} />
+                  </div>
+                </div>
+
+                <div style={{ textAlign: "right" }}>
+                  <div style={{
+                    fontSize: 22, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace",
+                    color: c.finalScore >= 60 ? "#00F0FF" : c.finalScore >= 45 ? "#FFB703" : "#E63946",
+                  }}>
+                    {c.finalScore}
+                  </div>
+                  <div style={{ fontSize: 9, color: "#555", letterSpacing: 1 }}>SCORE</div>
+                </div>
+              </div>
+
+              {/* Expanded Detail */}
+              {isOpen && (
+                <div style={{ marginTop: 16, paddingTop: 16, borderTop: "1px solid #1a1a1a" }}>
+                  <p style={{ fontSize: 12, color: "#999", lineHeight: 1.6, margin: "0 0 14px" }}>{c.notas}</p>
+                  <div style={{ background: "rgba(231,57,70,0.08)", border: "1px solid rgba(231,57,70,0.15)", borderRadius: 6, padding: "8px 12px", marginBottom: 14 }}>
+                    <span style={{ fontSize: 10, color: "#E63946", fontWeight: 600, letterSpacing: 1 }}>RIESGO: </span>
+                    <span style={{ fontSize: 11, color: "#ccc" }}>{c.riesgo}</span>
+                  </div>
+                  
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px 20px" }}>
+                    {weights.map(w => (
+                      <div key={w.key}>
+                        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 3 }}>
+                          <span style={{ fontSize: 10, color: "#777" }}>{w.label}</span>
+                          <span style={{ fontSize: 10, color: c.color, fontFamily: "'JetBrains Mono', monospace", fontWeight: 600 }}>
+                            {c.scores[w.key]}/10
+                          </span>
+                        </div>
+                        <ScoreBar value={c.scores[w.key]} color={c.color} />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Methodology */}
+      <div style={{ maxWidth: 900, margin: "24px auto 0", padding: 18, background: "rgba(255,255,255,0.02)", borderRadius: 10, border: "1px solid #1a1a1a" }}>
+        <h3 style={{ fontSize: 13, fontWeight: 700, color: "#fff", margin: "0 0 12px", letterSpacing: 0.5 }}>METODOLOGÍA</h3>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6px 20px" }}>
+          {weights.map(w => (
+            <div key={w.key} style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <span style={{ fontSize: 11, color: "#888" }}>{w.label}</span>
+              <span style={{
+                fontSize: 11, fontFamily: "'JetBrains Mono', monospace", fontWeight: 600,
+                color: w.weight >= 0.14 ? "#00F0FF" : w.weight >= 0.08 ? "#ccc" : "#666",
+              }}>{(w.weight * 100).toFixed(0)}%</span>
+            </div>
+          ))}
+        </div>
+        <p style={{ fontSize: 10, color: "#555", marginTop: 12, lineHeight: 1.5 }}>
+          Score final = Σ(criterio × peso) normalizado a escala 0-100. Cada criterio evaluado de 1-10 basado en: propuestas verificables en planes de gobierno (JNE), 
+          encuestas CPI/Ipsos/IEP/Datum (Ene-Mar 2026), hojas de vida declaradas ante JNE, cobertura mediática verificada, y estructura partidaria registrada.
+          Los pesos reflejan una distribución neutral orientada a gobernabilidad efectiva y calidad de propuesta. No constituye recomendación de voto.
+        </p>
+      </div>
+
+      {/* Key Insight */}
+      <div style={{ maxWidth: 900, margin: "16px auto 0", padding: 14, background: "rgba(0,240,255,0.04)", borderRadius: 10, border: "1px solid rgba(0,240,255,0.12)" }}>
+        <p style={{ fontSize: 11, color: "#aaa", margin: 0, lineHeight: 1.6 }}>
+          <span style={{ color: "#00F0FF", fontWeight: 700 }}>INSIGHT: </span>
+          El scoring revela una tensión estructural en el campo electoral peruano 2026: los candidatos con mejores propuestas técnicas tienen la menor viabilidad electoral, 
+          y los que lideran las encuestas tienen las propuestas más débiles. Ningún candidato supera el 70/100 combinando ambas dimensiones. 
+          El 42% de electores indecisos indica que el resultado real se decidirá en las últimas semanas.
+        </p>
+      </div>
+    </div>
+  );
+}
