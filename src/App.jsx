@@ -7,7 +7,7 @@ import { criteria } from "./data/criteria";
 import { rankCandidates } from "./lib/scorecard";
 
 const insightText =
-  "Doble lectura del tablero electoral post-debate JNE: CPI (21-23 marzo, pre-debate) mantiene a RLA puntero (11.7%) y Keiko subiendo (10.1%). Ipsos (26-27 marzo, post-debate) invierte: Keiko 11% y RLA cae a 9%. Carlos Álvarez emerge como fuerza disruptiva post-debate (3.5% CPI → 7% Ipsos). El spike de Wolfgang Grozo entre jóvenes (75% de su voto) ya colapsó. Segundo debate en curso (30 marzo - 1 abril). Con 12 días para elecciones del 12 de abril, todo apunta a segunda vuelta.";
+  "Ipsos 26-27 marzo (post-debates) confirma: Keiko lidera con 11% estable, RLA cae a 9%. Carlos Álvarez consolida 3er lugar (7%) con fuerte respaldo norte (9%) y centro (7%). Ricardo Belmont emerge con 3% (subió de 2%), Wolfgang Grozo colapsó a 'Otros'. López-Chau y Sánchez bajaron a 4%. Con 11 días para el 12 de abril, 33% sin candidato definido (13% indeciso + 21% blanco/nulo). Todo apunta a segunda vuelta entre Keiko y RLA.";
 
 export default function App() {
   const [selectedName, setSelectedName] = useState(candidates[0]?.name ?? null);
@@ -28,7 +28,7 @@ export default function App() {
             <p className="hero__kicker">Análisis comparativo 2026</p>
             <h1 className="hero__title">Scorecard Electoral Perú 2026</h1>
             <p className="hero__lede">
-              Análisis cuantificado de 10 candidatos principales · 10 criterios ponderados · Fuentes: CPI (Marzo 21-23, 2026) e Ipsos Perú21 (Marzo 26-27, 2026) · JNE Voto Informado · Segundo debate en curso
+              Análisis cuantificado de 10 candidatos principales · 10 criterios ponderados · Fuente: Ipsos Perú21 (Marzo 26-27, 2026, post-debates) · JNE Voto Informado · 11 días para elecciones
             </p>
             <div className="hero__stats" aria-label="Resumen del panel">
               <span className="hero__stat">
@@ -40,8 +40,8 @@ export default function App() {
                 <span>Criterios ponderados</span>
               </span>
               <span className="hero__stat">
-                <strong>23%</strong>
-                <span>Electorado indeciso</span>
+                <strong>33%</strong>
+                <span>Sin candidato definido</span>
               </span>
             </div>
           </div>
