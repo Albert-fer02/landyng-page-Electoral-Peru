@@ -681,4 +681,226 @@ button {
     display: grid;
     grid-template-columns: 1fr;
   }
+
+  /* ==================== NEW COMPONENTS ==================== */
+
+  /* ElectionCountdown */
+  .countdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(0, 229, 255, 0.12), rgba(0, 229, 255, 0.04));
+    border: 1px solid rgba(0, 229, 255, 0.24);
+  }
+
+  .countdown__item {
+    display: grid;
+    gap: 0.15rem;
+    text-align: center;
+    min-width: 3.5rem;
+  }
+
+  .countdown__number {
+    font-family: var(--mono);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .countdown__label {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .countdown__separator {
+    font-family: var(--mono);
+    font-size: 1.5rem;
+    color: var(--text-tertiary);
+    margin-bottom: 1rem;
+  }
+
+  .countdown--expired {
+    background: linear-gradient(135deg, rgba(255, 69, 96, 0.12), rgba(255, 69, 96, 0.04));
+    border-color: rgba(255, 69, 96, 0.24);
+  }
+
+  .countdown--expired .countdown__label {
+    color: var(--danger);
+    font-weight: 600;
+  }
+
+  /* LastUpdated */
+  .last-updated {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    padding: 0.5rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--surface-border);
+  }
+
+  .last-updated__icon {
+    color: var(--positive);
+    font-size: 0.7rem;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .last-updated__text {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+  }
+
+  .last-updated__text strong {
+    color: var(--text);
+  }
+
+  /* OnpeInfo */
+  .onpe-info {
+    margin-top: 1.3rem;
+    border-radius: 12px;
+    background: var(--surface-0);
+    border: 1px solid var(--surface-border);
+    overflow: hidden;
+  }
+
+  .onpe-info[open] {
+    box-shadow: var(--shadow);
+  }
+
+  .onpe-info__trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border: none;
+    background: transparent;
+    color: var(--text);
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: left;
+    transition: background 180ms ease;
+  }
+
+  .onpe-info__trigger:hover {
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .onpe-info__icon {
+    font-size: 1.2rem;
+  }
+
+  .onpe-info__title {
+    flex: 1;
+  }
+
+  .onpe-info__arrow {
+    color: var(--text-tertiary);
+    font-size: 0.75rem;
+    transition: transform 220ms ease;
+  }
+
+  .onpe-info__content {
+    padding: 0 1.25rem 1.25rem;
+  }
+
+  .onpe-info__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .onpe-info__item {
+    display: grid;
+    gap: 0.35rem;
+    padding: 0.85rem;
+    border-radius: 8px;
+    background: var(--surface-2);
+    border: 1px solid var(--surface-border);
+  }
+
+  .onpe-info__label {
+    font-size: 0.72rem;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .onpe-info__value {
+    font-size: 0.9rem;
+    color: var(--text);
+  }
+
+  .onpe-info__link {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: opacity 180ms ease;
+  }
+
+  .onpe-info__link:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+  }
+
+  .onpe-info__footer {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--surface-border);
+  }
+
+  .onpe-info__note {
+    display: block;
+    padding: 0.75rem;
+    border-radius: 8px;
+    background: rgba(249, 199, 79, 0.1);
+    border: 1px solid rgba(249, 199, 79, 0.24);
+    color: var(--warning);
+    font-size: 0.82rem;
+  }
+
+  /* Mobile responsive for new components */
+  @media (max-width: 760px) {
+    .countdown {
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      padding: 0.85rem;
+    }
+
+    .countdown__item {
+      min-width: 2.8rem;
+    }
+
+    .countdown__number {
+      font-size: 1.4rem;
+    }
+
+    .countdown__separator--mobile {
+      display: none;
+    }
+
+    .countdown__item--mobile {
+      display: none;
+    }
+
+    .onpe-info__grid {
+      grid-template-columns: 1fr;
+    }
+  }
 }

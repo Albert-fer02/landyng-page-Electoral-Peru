@@ -2,6 +2,9 @@ import { useState } from "react";
 import { CandidateCard } from "./components/CandidateCard";
 import { MethodologyPanel } from "./components/MethodologyPanel";
 import { SortControls } from "./components/SortControls";
+import { ElectionCountdown } from "./components/ElectionCountdown";
+import { LastUpdated } from "./components/LastUpdated";
+import { OnpeInfo } from "./components/OnpeInfo";
 import { candidates } from "./data/candidates";
 import { criteria } from "./data/criteria";
 import { rankCandidates } from "./lib/scorecard";
@@ -28,8 +31,10 @@ export default function App() {
             <p className="hero__kicker">Análisis comparativo 2026</p>
             <h1 className="hero__title">Scorecard Electoral Perú 2026</h1>
             <p className="hero__lede">
-              Análisis cuantificado de 10 candidatos principales · 10 criterios ponderados · Fuente: Ipsos Perú21 (Marzo 26-27, 2026, post-debates) · JNE Voto Informado · 11 días para elecciones
+              Análisis cuantificado de 10 candidatos principales · 10 criterios ponderados · Fuente: Ipsos Perú21 (Marzo 26-27, 2026, post-debates) · JNE Voto Informado
             </p>
+            <ElectionCountdown />
+            <LastUpdated />
             <div className="hero__stats" aria-label="Resumen del panel">
               <span className="hero__stat">
                 <strong>10</strong>
@@ -88,6 +93,8 @@ export default function App() {
           </h2>
           <p>{insightText}</p>
         </section>
+
+        <OnpeInfo />
       </main>
     </div>
   );
