@@ -7,7 +7,7 @@ import { criteria } from "./data/criteria";
 import { rankCandidates } from "./lib/scorecard";
 
 const insightText =
-  "El scoring revela una tensión estructural en el campo electoral peruano 2026: los candidatos con mejores propuestas técnicas tienen la menor viabilidad electoral, y los que lideran las encuestas tienen las propuestas más débiles. Ningún candidato supera el 70/100 combinando ambas dimensiones. El 42% de electores indecisos indica que el resultado real se decidirá en las últimas semanas.";
+  "El scoring post-debate revela un tablero electoral fragmentado: Keiko Fujimori se mantiene en la punta (11%) mientras López Aliaga cae a 9%. Carlos Álvarez emerge como tercer fuerza (7%) impulsado por su mensaje propositivo. El debate JNE (23-25 marzo) movió fichas: Marisol Pérez Tello y Fernando Olivera subieron, López-Chau y Sánchez no convencieron. Con 13% de indecisos y 14 días para las elecciones del 12 de abril, el resultado sigue abierto.";
 
 export default function App() {
   const [selectedName, setSelectedName] = useState(candidates[0]?.name ?? null);
@@ -28,13 +28,11 @@ export default function App() {
             <p className="hero__kicker">Análisis comparativo 2026</p>
             <h1 className="hero__title">Scorecard Electoral Perú 2026</h1>
             <p className="hero__lede">
-              Análisis cuantificado de 10 candidatos principales · 10 criterios
-              ponderados · Fuentes: CPI, Ipsos, IEP, Datum (Ene-Feb 2026) · JNE
-              Voto Informado
+              Análisis cuantificado de 9 candidatos principales · 10 criterios ponderados · Fuentes: Ipsos Perú21 (Marzo 26-27, 2026) · JNE Voto Informado · Post-debate presidencial
             </p>
             <div className="hero__stats" aria-label="Resumen del panel">
               <span className="hero__stat">
-                <strong>10</strong>
+                <strong>9</strong>
                 <span>Candidatos auditados</span>
               </span>
               <span className="hero__stat">
@@ -42,7 +40,7 @@ export default function App() {
                 <span>Criterios ponderados</span>
               </span>
               <span className="hero__stat">
-                <strong>42%</strong>
+                <strong>13%</strong>
                 <span>Electorado indeciso</span>
               </span>
             </div>
