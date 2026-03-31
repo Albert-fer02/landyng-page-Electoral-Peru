@@ -1,3 +1,6 @@
+export const POLL_DATE = "2026-03-27";
+export const POLL_SOURCE = "Ipsos Perú21";
+
 export const candidates = [
   {
     name: "Keiko Fujimori",
@@ -17,8 +20,15 @@ export const candidates = [
     },
     encuesta: 11.0,
     tendencia: "estable",
+    regional: {
+      lima: 16,
+      oriente: 18,
+      norte: null,
+      centro: null,
+      interior: null,
+    },
     notas:
-      "Líder Ipsos 26-27 marzo (11%). Estable post-debates. Cuarta candidatura. Investigada por lavado de activos (Lavamoto). Mayor antivoto. Bancada parlamentaria fuerte. Simulacro CPI: 13.1% votos emitidos. Lima: 16%, oriente: 18%. JNE confirmó sanción a FP por uso de fondos públicos.",
+      "Líder Ipsos 26-27 marzo (11%). Estable post-debates. Cuarta candidatura. Investigada por lavado de activos (Lavamoto). Mayor antivoto. Bancada parlamentaria fuerte. Simulacro CPI: 13.1% votos emitidos. JNE confirmó sanción a FP por uso de fondos públicos.",
     riesgo: "Antivoto masivo, proceso penal activo, legado autoritario",
   },
   {
@@ -39,8 +49,15 @@ export const candidates = [
     },
     encuesta: 9.0,
     tendencia: "bajando",
+    regional: {
+      lima: null,
+      oriente: null,
+      norte: null,
+      centro: null,
+      interior: 15,
+    },
     notas:
-      "9% Ipsos (cayó de 10% pre-debate, 11.7% CPI). Pico 14.6% en febrero, caída sostenida. Exalcalde de Lima. Fuerte en capital (15% interior), débil en regiones. Discurso populista-conservador. Segundo debate: temas empleo y educación. Candidata a diputada Lizzi Sueldo genera polémica.",
+      "9% Ipsos (cayó de 10% pre-debate, 11.7% CPI). Pico 14.6% en febrero, caída sostenida. Exalcalde de Lima. Fuerte en capital (15% interior), débil en regiones. Discurso populista-conservador. Segundo debate: temas empleo y educación.",
     riesgo: "Caída constante desde febrero, discurso errático, débil propuesta técnica",
   },
   {
@@ -61,8 +78,15 @@ export const candidates = [
     },
     encuesta: 7.0,
     tendencia: "subiendo",
+    regional: {
+      lima: null,
+      oriente: null,
+      norte: 9,
+      centro: 7,
+      interior: null,
+    },
     notas:
-      "3er lugar Ipsos (7%). Mayor crecimiento post-debate: 5% → 7%. Norte: 9%, centro: 7%. Imitó a Alan García en debate, generó momentos virales. Acompañado por 'El Pollo' del humor. Mensaje propositivo resonó con electores. Fenómeno anti-política tradicional.",
+      "3er lugar Ipsos (7%). Mayor crecimiento post-debate: 5% → 7%. Imitó a Alan García en debate, generó momentos virales. Acompañado por 'El Pollo' del humor. Mensaje propositivo resonó con electores. Fenómeno anti-política tradicional.",
     riesgo: "Cero experiencia ejecutiva, crecimiento volátil, estilo humorístico",
   },
   {
@@ -83,6 +107,7 @@ export const candidates = [
     },
     encuesta: 5.0,
     tendencia: "estable",
+    regional: {},
     notas:
       "4to lugar Ipsos (5%). Crecimiento más marcado del campo: 0.2% enero → 5% marzo. Exministro de Defensa, perfil técnico. Propone sistema único de salud y Pacto Social. Simulacro CPI: 6.7% votos válidos. Estable post-primeros debates.",
     riesgo: "Partido nuevo, baja recordación, estructura partidaria débil",
@@ -105,6 +130,7 @@ export const candidates = [
     },
     encuesta: 4.0,
     tendencia: "bajando",
+    regional: {},
     notas:
       "5to lugar Ipsos (4%). Cayó de 5% pre-debate a 4%. Exrector UNI, doctor Economía UNAM. Propone ciencia y tech como motor. Modelo 5 hélices. Simulacro CPI: 10.5% votos válidos. No convenció en debates, evidenció limitaciones.",
     riesgo: "Cayó post-debate, proceso penal pendiente, partido nuevo",
@@ -127,6 +153,7 @@ export const candidates = [
     },
     encuesta: 4.0,
     tendencia: "bajando",
+    regional: {},
     notas:
       "6to lugar Ipsos (4%). Congresista en funciones, exministro Pedro Castillo. Electores perciben que 'careta de político nuevo no es real'. Responsable por normas legislativas cuestionadas. Atacado como 'telonero de Castillo' en debate.",
     riesgo: "Asociación con gobierno Castillo, percepción de falta de autenticidad",
@@ -149,6 +176,7 @@ export const candidates = [
     },
     encuesta: 3.0,
     tendencia: "subiendo",
+    regional: {},
     notas:
       "NUEVO en Ipsos: 3% (subió de 2%). Exalcalde de Lima (2003-2006), ingeniero civil. Postura anticorrupción, enfoque en obras e infraestructura. Scores estimados conservadoramente — sin evaluación formal completa. Retorno político tras años alejado.",
     riesgo: "Scores estimados, retorno político, partido con estructura limitada",
@@ -171,6 +199,7 @@ export const candidates = [
     },
     encuesta: 3.2,
     tendencia: "estable",
+    regional: {},
     notas:
       "3.2% CPI (sin medición Ipsos reciente). Empresario educativo, exgobernador La Libertad. Mayor estructura partidaria del país (APP). Antivoto alto (40%). Denuncias por plagio académico. Simulacro CPI: ~4.9% votos válidos.",
     riesgo: "Antivoto alto, escándalos de plagio, sin dato Ipsos reciente",
@@ -193,8 +222,9 @@ export const candidates = [
     },
     encuesta: 2.0,
     tendencia: "subiendo",
+    regional: {},
     notas:
-      "2% Ipsos (subió de 0.5%). Exministra Justicia (PPK), excongresista. Tono firme y propuestas claras en debate. Plan articulado: Autoridad Transparencia, flagrancia. Hoja limpia. Fiorella Molinelli responde: 'Águila no responde a moscas' tras críticas.",
+      "2% Ipsos (subió de 0.5%). Exministra Justicia (PPK), excongresista. Tono firme y propuestas claras en debate. Plan articulado: Autoridad Transparencia, flagrancia. Hoja limpia.",
     riesgo: "Viabilidad electoral limitada, sin bancada posible",
   },
   {
@@ -215,8 +245,9 @@ export const candidates = [
     },
     encuesta: 2.0,
     tendencia: "subiendo",
+    regional: {},
     notas:
-      "2% Ipsos (subió de 'Otros'). Excongresista, perfil confrontacional. Tono agresivo en debate le dio réditos. Bandera anticorrupción. Yohny Lescano lo atacó como 'sobón de Fujimori' en debate. Sin CPI reciente.",
+      "2% Ipsos (subió de 'Otros'). Excongresista, perfil confrontacional. Tono agresivo en debate le dio réditos. Bandera anticorrupción. Yohny Lescano lo atacó como 'sobón de Fujimori' en debate.",
     riesgo: "Estilo confrontacional polariza, base electoral reducida",
   },
 ];

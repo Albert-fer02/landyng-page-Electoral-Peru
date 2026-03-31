@@ -5,7 +5,8 @@ import { SortControls } from "./components/SortControls";
 import { ElectionCountdown } from "./components/ElectionCountdown";
 import { LastUpdated } from "./components/LastUpdated";
 import { OnpeInfo } from "./components/OnpeInfo";
-import { candidates } from "./data/candidates";
+import { RegionalBreakdown } from "./components/RegionalBreakdown";
+import { candidates, POLL_DATE, POLL_SOURCE } from "./data/candidates";
 import { criteria } from "./data/criteria";
 import { rankCandidates } from "./lib/scorecard";
 
@@ -34,7 +35,7 @@ export default function App() {
               Análisis cuantificado de 10 candidatos principales · 10 criterios ponderados · Fuente: Ipsos Perú21 (Marzo 26-27, 2026, post-debates) · JNE Voto Informado
             </p>
             <ElectionCountdown />
-            <LastUpdated />
+            <LastUpdated source={POLL_SOURCE} date={POLL_DATE} />
             <div className="hero__stats" aria-label="Resumen del panel">
               <span className="hero__stat">
                 <strong>10</strong>
@@ -86,6 +87,8 @@ export default function App() {
         </section>
 
         <MethodologyPanel criteria={criteria} />
+
+        <RegionalBreakdown candidates={candidates} pollSource={`${POLL_SOURCE} (${POLL_DATE})`} />
 
         <section className="insight-card" aria-labelledby="insight-title">
           <h2 id="insight-title" className="section-title">

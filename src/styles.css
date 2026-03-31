@@ -875,6 +875,137 @@ button {
     font-size: 0.82rem;
   }
 
+  /* RegionalBreakdown */
+  .regional {
+    margin-top: 1.3rem;
+    border-radius: 12px;
+    background: var(--surface-0);
+    border: 1px solid var(--surface-border);
+    overflow: hidden;
+  }
+
+  .regional[open] {
+    box-shadow: var(--shadow);
+  }
+
+  .regional__trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border: none;
+    background: transparent;
+    color: var(--text);
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: left;
+    transition: background 180ms ease;
+  }
+
+  .regional__trigger:hover {
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .regional__icon {
+    font-size: 1.2rem;
+  }
+
+  .regional__title {
+    flex: 1;
+  }
+
+  .regional__arrow {
+    color: var(--text-tertiary);
+    font-size: 0.75rem;
+  }
+
+  .regional__content {
+    padding: 0 1.25rem 1.25rem;
+  }
+
+  .regional__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.85rem;
+  }
+
+  .regional__card {
+    padding: 0.85rem;
+    border-radius: 8px;
+    background: var(--surface-2);
+    border: 1px solid var(--surface-border);
+  }
+
+  .regional__region-name {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.65rem;
+  }
+
+  .regional__leaders {
+    display: grid;
+    gap: 0.45rem;
+  }
+
+  .regional__leader {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .regional__leader--first {
+    font-weight: 600;
+  }
+
+  .regional__dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 999px;
+    flex-shrink: 0;
+  }
+
+  .regional__name {
+    flex: 1;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .regional__leader--first .regional__name {
+    color: var(--text);
+  }
+
+  .regional__pct {
+    font-family: var(--mono);
+    font-size: 0.9rem;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  .regional__footer {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--surface-border);
+  }
+
+  .regional__note {
+    display: block;
+    padding: 0.65rem 0.75rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--text-tertiary);
+    font-size: 0.78rem;
+    font-style: italic;
+  }
+
   /* Mobile responsive for new components */
   @media (max-width: 760px) {
     .countdown {
@@ -900,6 +1031,10 @@ button {
     }
 
     .onpe-info__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .regional__grid {
       grid-template-columns: 1fr;
     }
   }
