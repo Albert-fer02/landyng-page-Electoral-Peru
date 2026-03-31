@@ -224,8 +224,8 @@ export const candidates = [
     tendencia: "subiendo",
     regional: {},
     notas:
-      "2% Ipsos (subió de 0.5%). Exministra Justicia (PPK), excongresista. Tono firme y propuestas claras en debate. Plan articulado: Autoridad Transparencia, flagrancia. Hoja limpia.",
-    riesgo: "Viabilidad electoral limitada, sin bancada posible",
+      "2% Ipsos (subió de 0.5%). Exministra Justicia (PPK), excongresista. Tono firme y propuestas claras en debate. Plan articulado: Autoridad Transparencia, flagrancia. Hoja limpia. Viral en TikTok e Instagram — perfil de 'candidata seria' entre jóvenes. Fenómeno orgánico sin estructura partidaria fuerte.",
+    riesgo: "Viabilidad electoral limitada, viralidad redes puede no traducirse en votos",
   },
   {
     name: "Fernando Olivera",

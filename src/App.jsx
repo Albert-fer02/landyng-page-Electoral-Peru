@@ -11,7 +11,7 @@ import { criteria } from "./data/criteria";
 import { rankCandidates } from "./lib/scorecard";
 
 const insightText =
-  "Ipsos 26-27 marzo (post-debates) confirma: Keiko lidera con 11% estable, RLA cae a 9%. Carlos Álvarez consolida 3er lugar (7%) con fuerte respaldo norte (9%) y centro (7%). Ricardo Belmont emerge con 3% (subió de 2%), Wolfgang Grozo colapsó a 'Otros'. López-Chau y Sánchez bajaron a 4%. Con 11 días para el 12 de abril, 33% sin candidato definido (13% indeciso + 21% blanco/nulo). Todo apunta a segunda vuelta entre Keiko y RLA.";
+  "Doble encuesta post-debate: Ipsos mantiene a Keiko 11% (estable) y RLA cae a 9%. Datum (25-27 marzo) muestra a Keiko 13% y RLA 11.7% — campo más amplio. Marisol Pérez Tello se vuelve viral en TikTok/Instagram como 'candidata seria', fenómeno orgánico entre jóvenes. Carlos Álvarez consolida 3er lugar (7%). Datum recupera a Wolfgang Grozo (2.1%) y muestra a López-Chau en 6.1%. Con 10 días para el 12 de abril, 33% sin candidato definido. Todo apunta a segunda vuelta entre Keiko y RLA.";
 
 export default function App() {
   const [selectedName, setSelectedName] = useState(candidates[0]?.name ?? null);
@@ -32,7 +32,7 @@ export default function App() {
             <p className="hero__kicker">Análisis comparativo 2026</p>
             <h1 className="hero__title">Scorecard Electoral Perú 2026</h1>
             <p className="hero__lede">
-              Análisis cuantificado de 10 candidatos principales · 10 criterios ponderados · Fuente: Ipsos Perú21 (Marzo 26-27, 2026, post-debates) · JNE Voto Informado
+              Análisis cuantificado de 10 candidatos principales · 10 criterios ponderados · Fuentes: Ipsos Perú21 (Marzo 26-27) y Datum (Marzo 25-27, 2026) · JNE Voto Informado
             </p>
             <ElectionCountdown />
             <LastUpdated source={POLL_SOURCE} date={POLL_DATE} />
