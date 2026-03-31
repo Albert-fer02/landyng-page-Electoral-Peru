@@ -1,0 +1,29 @@
+schema: spec-driven
+
+context: |
+  Tech stack: React 19, Vite 7, vanilla CSS
+  Architecture: Component-based (src/components/), data layer (src/data/), utilities (src/lib/)
+  Testing: None (no test framework configured)
+  Style: Vanilla CSS in src/styles.css, no linter/formatter
+
+rules:
+  proposal:
+    - Include rollback plan for risky changes
+    - Identify affected components/modules
+  specs:
+    - Use Given/When/Then format for scenarios
+    - Use RFC 2119 keywords (MUST, SHALL, SHOULD, MAY)
+  design:
+    - Include component structure for UI changes
+    - Document data flow for state changes
+  tasks:
+    - Group tasks by component or feature
+    - Keep tasks small enough to complete in one session
+  apply:
+    - Follow existing component patterns (functional components, hooks)
+    - Use React 19 patterns (no useMemo/useCallback needed - React Compiler)
+  verify:
+    - Build the project to verify no errors
+    - Compare implementation against every spec scenario
+  archive:
+    - Warn before merging destructive deltas
