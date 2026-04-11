@@ -1,6 +1,3 @@
-export const POLL_DATE = "2026-04-04";
-export const POLL_SOURCE = "Ipsos Perú21 (Última publicable)";
-
 export const METHODOLOGY = {
   version: "2.0",
   lastUpdate: "2026-04-11",
@@ -9,9 +6,9 @@ export const METHODOLOGY = {
   pollingPeriod: "2026-03-25 to 2026-04-06",
   marginOfError: "~2.8%",
   disclaimers: [
-    "Encuestas son fotografías, no predicciones",
+    "Las encuestas son fotografías, no predicciones",
     "Alto nivel de indecisos (13-16%)",
-    "Voto nulo/branco: 11-17%",
+    "Voto nulo/blanco: 11-17%",
     "La intención de voto NO equivale a capacidad de gobierno",
   ],
 };
@@ -22,8 +19,7 @@ export function calculatePollAverage(polls) {
   return (
     ((polls.ipsos || 0) * ipsos +
       (polls.datum || 0) * datum +
-      (polls.cpi || 0) * cpi) /
-    1
+      (polls.cpi || 0) * cpi)
   ).toFixed(1);
 }
 
@@ -79,8 +75,8 @@ export const candidates = [
       sur: null,
     },
     notas:
-      "Ipsos(simulacro): 18.6%, Ipsos(intención): 15%, Datum: 14.5%, CPI: 11.8%. Líder absoluta. Tercerauparrow sostenida post-debates. Domina Oriente (36.9%) y Centro (22.2%). Cuarta candidatura. Antivoto 54-76% (IEP). Proceso penal Lava Jato ativo. Bancada parlamentaria fuerte (21).",
-    riesgo: "Antivoto 54-76%, proceso penal ativo, legado autoritario",
+      "Ipsos(simulacro): 18.6%, Ipsos(intención): 15%, Datum: 14.5%, CPI: 11.8%. Líder absoluta. Tercerasubida sostenida post-debates. Domina Oriente (36.9%) y Centro (22.2%). Cuarta candidatura. Antivoto 54-76% (IEP). Proceso penal Lava Jato activo. Bancada parlamentaria fuerte (21).",
+    riesgo: "Antivoto 54-76%, proceso penal activo, legado autoritario",
   },
   {
     name: "Carlos Álvarez",
@@ -101,13 +97,13 @@ export const candidates = [
     methodology: {
       experiencia: "Sin cargo público verificable",
       propuesta_tech: "Análisis plan JNE: propuestas vagas",
-      anticorrupcion: "Sin historial - candidato novo",
+      anticorrupcion: "Sin historial - candidato nuevo",
       seguridad: "Propuestas populistas sin detalle",
       descentralizacion: "Análisis plan JNE",
       viabilidad: "Promedio ponderado 3 encuestas",
-      gobernabilidad: "Partido novo, sin respaldo congressual",
-      equipo_tecnico: "Equipo não identificado",
-      integridad: "Sin prosesos - candiato novo",
+      gobernabilidad: "Partido nuevo, sin respaldo congressional",
+      equipo_tecnico: "Equipo no identificado",
+      integridad: "Sin procesos - candidato nuevo",
       plan_concreto: "Análisis plan JNE: muy general",
     },
     sources: {
@@ -133,8 +129,8 @@ export const candidates = [
       sur: null,
     },
     notas:
-      "Ipsos(simulacro): 12.1%, intention: 9%, Datum: 10.9%, CPI: 8.5%. Segundo lugar, gran salto post-debates (+4.7). Cómico/imitador. Sin experiência em cargo público. Propostas populistas (pena de morte, saida do CIDH). Lidera em Lima.",
-    riesgo: "Sem estrutura partidária, sem experiência de governo, proposals irrealizáveis",
+      "Ipsos(simulacro): 12.1%, intención: 9%, Datum: 10.9%, CPI: 8.5%. Segundo lugar, gran salto post-debates (+4.7). Cómico/imitador. Sin experiencia en cargo público. Propuestas populistas (pena de muerte, salida del CIDH). Lidera en Lima.",
+    riesgo: "Sin estructura partidaria, sin experiencia de gobierno, propuestas irrealizables",
   },
   {
     name: "Rafael López Aliaga",
@@ -154,14 +150,14 @@ export const candidates = [
     },
     methodology: {
       experiencia: "Alcalde Lima 2023-2025",
-      propuesta_tech: "Análisis plan JNE: sin propostas tech",
-      anticorrupcion: "Denúncias não comprovadas",
+      propuesta_tech: "Análisis plan JNE: sin propuestas tech",
+      anticorrupcion: "Denuncias no comprobadas",
       seguridad: "Historial parlamentario + plan JNE",
       descentralizacion: "Análisis plan JNE",
       viabilidad: "Promedio ponderado 3 encuestas",
-      gobernabilidad: "Bancada PR (16) - em queda",
-      equipo_tecnico: "Equipo declarado ao JNE",
-      integridad: "Controvérsias públicas",
+      gobernabilidad: "Bancada PR (16) - en caída",
+      equipo_tecnico: "Equipo declarado al JNE",
+      integridad: "Controversias públicas",
       plan_concreto: "Análisis plan JNE: general",
     },
     sources: {
@@ -187,8 +183,8 @@ export const candidates = [
       sur: null,
     },
     notas:
-      "Ipsos(simulacro): 10.9%, intention: 7%, Datum: 10.3%, CPI: 9.2%. Terceiro lugar, cai desde janeiro (partia em 14%). Ex-alcalde Lima. Propostas de mão dura. Antivoto significante. Disputa com Belmonte.",
-    riesgo: " cai em encuestas, controvertido, promises populistas",
+      "Ipsos(simulacro): 10.9%, intención: 7%, Datum: 10.3%, CPI: 9.2%. Tercer lugar, cae desde enero (partía en 14%). Ex-alcalde Lima. Propuestas de mano dura. Antivoto significativo. Disputa con Belmont.",
+    riesgo: "Cae en encuestas, controvertido, propuestas populistas",
   },
   {
     name: "Roberto Sánchez",
@@ -208,12 +204,12 @@ export const candidates = [
     },
     methodology: {
       experiencia: "Exministro Defensa, excongresista",
-      propuesta_tech: "Análisis plan JNE: propostas moderadas",
+      propuesta_tech: "Análisis plan JNE: propuestas moderadas",
       anticorrupcion: "Historial limpio",
-      seguridad: "Historial ministerial",
+      seguridad: "Experiencia ministerial",
       descentralizacion: "Análisis plan JNE",
       viabilidad: "Promedio ponderado 3 encuestas",
-      gobernabilidad: "Apoyo em zonas rurales",
+      gobernabilidad: "Apoyo en zonas rurales",
       equipo_tecnico: "Equipo identificado",
       integridad: "CSM limpio",
       plan_concreto: "Análisis plan JNE: concreto",
@@ -241,8 +237,8 @@ export const candidates = [
       sur: null,
     },
     notas:
-      "Ipsos(simulacro): 9.0%, Datum: 5.2%, CPI: 3.8%. Cuarto lugar, crescimento post-debates. Exministro Castillo. Perfil técnico. Izquierda. Maior apoyo em sectores D/E.",
-    riesgo: "Pouco conocido, estrutura fraca, sem mídia",
+      "Ipsos(simulacro): 9.0%, Datum: 5.2%, CPI: 3.8%. Cuarto lugar, crecimiento post-debates. Exministro Castillo. Perfil técnico. Izquierda. Mayor apoyo en sectores D/E.",
+    riesgo: "Poco conocido, estructura débil, sin medios",
   },
   {
     name: "Jorge Nieto Montesinos",
@@ -262,26 +258,26 @@ export const candidates = [
     },
     methodology: {
       experiencia: "Exministro Defensa",
-      proposta_tech: "Análisis plan JNE: propuestas concretas santé",
+      propuesta_tech: "Análisis plan JNE: propuestas concretas salud",
       anticorrupcion: "Historial limpio",
       seguridad: "Experiencia ministerial",
       descentralizacion: "Análisis plan JNE",
       viabilidad: "Promedio ponderado 3 encuestas",
-      gobernabilidad: "Partido novo, sem estrutura",
-      equipo_tecnico: "Equipo técnico identificável",
-      integridad: "CSM limpo",
+      gobernabilidad: "Partido nuevo, sin estructura",
+      equipo_tecnico: "Equipo técnico identificable",
+      integridad: "CSM limpio",
       plan_concreto: "Análisis plan JNE: detallado",
     },
     sources: {
       experiencia: "PCM",
-      proposta_tech: "Plan JNE",
+      propuesta_tech: "Plan JNE",
       anticorrupcion: "CSM",
       seguridad: "Ministerio",
       descentralizacion: "JNE",
       viabilidad: "Ipsos, Datum, CPI",
       gobernabilidad: "ONPE",
       equipo_tecnico: "JNE",
-      integrityr: "CSM",
+      integridad: "CSM",
       plan_concreto: "JNE",
     },
     polls: { ipsos: 5.6, datum: 5.3, cpi: 4.8 },
@@ -295,8 +291,8 @@ export const candidates = [
       sur: null,
     },
     notas:
-      "Ipsos(simulacro): 5.6%, Datum: 5.3%, CPI: 4.8%. Exministro Defensa, perfil técnico. Propõe sistema único de saúde e Pacto Social. Buen equipo técnico. Maysoría en sector D/E.",
-    risco: "Partido novo, baixa recordação, sem estrutura regional, sem momentum post-debate",
+      "Ipsos(simulacro): 5.6%, Datum: 5.3%, CPI: 4.8%. Exministro Defensa, perfil técnico. Propone sistema único de salud y Pacto Social. Buen equipo técnico. Mayoría en sector D/E.",
+    riesgo: "Partido nuevo, baja recordación, sin estructura regional, sin momentum post-debate",
   },
   {
     name: "César Acuña",
@@ -315,15 +311,15 @@ export const candidates = [
       plan_concreto: 5,
     },
     methodology: {
-      experiencia: "Exgovernador La Libertad",
-      propuesta_tech: "Análisis plan JNE: quelques propositions",
-      anticorrupcion: "Denúncias não comprovadas",
+      experiencia: "Exgobernador La Libertad",
+      propuesta_tech: "Análisis plan JNE: algunas propuestas",
+      anticorrupcion: "Denuncias no comprobadas",
       seguridad: "Historial regional",
-      descentralizacion: "Experiência governamental",
+      descentralizacion: "Experiencia gubernamental",
       viabilidad: "Promedio ponderado 3 encuestas",
       gobernabilidad: "Bancada APP",
       equipo_tecnico: "Equipo identificado",
-      integridad: "Controvérsias públicas",
+      integridad: "Controversias públicas",
       plan_concreto: "Análisis plan JNE: moderado",
     },
     sources: {
@@ -349,8 +345,8 @@ export const candidates = [
       sur: null,
     },
     notas:
-      "Ipsos(simulacro): 5.1%, Datum: N/A, CPI: 3.2%. Exgovernador La Libertad. Denúncias de corrupação. Apoy em regiones. Antivoto 7.3% (IEP).",
-    riesgo: "Denúncias de corrupação,antivoto significativo, estrutura partidária",
+      "Ipsos(simulacro): 5.1%, Datum: N/A, CPI: 3.2%. Exgobernador La Libertad. Denuncias de corrupción. Apoyo en regiones. Antivoto 7.3% (IEP).",
+    riesgo: "Denuncias de corrupción, antivoto significativo, estructura partidaria",
   },
   {
     name: "Alfonso López Chau",
@@ -358,7 +354,7 @@ export const candidates = [
     color: "#9B59B6",
     scores: {
       experiencia: 6,
-      proposta_tech: 6,
+      propuesta_tech: 6,
       anticorrupcion: 5,
       seguridad: 5,
       descentralizacion: 7,
@@ -370,19 +366,19 @@ export const candidates = [
     },
     methodology: {
       experiencia: "Exrector UNI",
-      proposta_tech: "Análisis plan JNE: propostas concretas tecnología",
-      anticorrupcion: "Sin processos",
-      seguridad: "Propostas moderadas",
-      descentralizacion: "Análisis plan JNE + experiência",
+      propuesta_tech: "Análisis plan JNE: propuestas concretas tecnología",
+      anticorrupcion: "Sin procesos",
+      seguridad: "Propuestas moderadas",
+      descentralizacion: "Análisis plan JNE + experiencia",
       viabilidad: "Promedio ponderado 3 encuestas",
-      gobernabilidad: "Partido em crescimento",
+      gobernabilidad: "Partido en crecimiento",
       equipo_tecnico: "Perfil técnico",
-      integridad: "CSM limpo",
+      integridad: "CSM limpio",
       plan_concreto: "Análisis plan JNE: detallado",
     },
     sources: {
       experiencia: "UNI",
-      proposta_tech: "Plan JNE",
+      propuesta_tech: "Plan JNE",
       anticorrupcion: "CSM",
       seguridad: "JNE",
       descentralizacion: "JNE, UNI",
@@ -403,8 +399,8 @@ export const candidates = [
       sur: null,
     },
     notas:
-      "Ipsos(simulacro): 4.4%, Datum: 3.4%, CPI: 6.0%. Exrector UNI, doutor Economía UNAM. Modelo 5 hélices. Propostas técnicas. Centro é seu forte.",
-    riesgo: "Pouco conocido,partido novo,sem estrutura fuerte",
+      "Ipsos(simulacro): 4.4%, Datum: 3.4%, CPI: 6.0%. Exrector UNI, doctor Economía UNAM. Modelo 5 hélices. Propuestas técnicas. Centro es su fuerte.",
+    riesgo: "Poco conocido, partido nuevo, sin estructura fuerte",
   },
   {
     name: "Ricardo Belmont",
@@ -425,14 +421,14 @@ export const candidates = [
     methodology: {
       experiencia: "Alcalde Lima 1983-1986",
       propuesta_tech: "Análisis plan JNE: general",
-      anticorrupcion: "Sin processos",
-      seguridad: "Propostas populistas",
+      anticorrupcion: "Sin procesos",
+      seguridad: "Propuestas populistas",
       descentralizacion: "Análisis plan JNE",
       viabilidad: "Promedio ponderado 3 encuestas",
-      gobernabilidad: "Sin representación congressual",
-      equipo_tecnico: "Não identificado",
+      gobernabilidad: "Sin representación congressional",
+      equipo_tecnico: "No identificado",
       integridad: "CSM limpio",
-      plan_concreto: "Análisis plan JNE: geral",
+      plan_concreto: "Análisis plan JNE: general",
     },
     sources: {
       experiencia: "Municipalidad Lima",
@@ -457,8 +453,8 @@ export const candidates = [
       sur: null,
     },
     notas:
-      "Ipsos(simulacro): 4.3%. Sorpresa pós-debates. Exalcalde Lima (1983-86). Campaña agressiva em redes. Cresce em intención mas cai em simulacro.",
-    riesgo: "Estrutura fraca,partido novo,sem experiência recen",
+      "Ipsos(simulacro): 4.3%. Sorpresa post-debates. Exalcalde Lima (1983-86). Campaña agresiva en redes. Crece en intención pero cae en simulacro.",
+    riesgo: "Estructura débil, partido nuevo, sin experiencia reciente",
   },
   {
     name: "Marisol Pérez Tello",
@@ -478,20 +474,20 @@ export const candidates = [
     },
     methodology: {
       experiencia: "Exministra Justicia, excongresista",
-      propuesta_tech: "Análisis plan JNE: propostas concretas technology",
-      anticorrupcion: "Historial limpo + perfil anticorrupção",
-      seguridad: "Propostas detalhadas",
+      propuesta_tech: "Análisis plan JNE: propuestas concretas tecnología",
+      anticorrupcion: "Historial limpio + perfil anticorrupción",
+      seguridad: "Propuestas detalladas",
       descentralizacion: "Análisis plan JNE",
       viabilidad: "Promedio ponderado 3 encuestas",
-      gobernabilidad: "Sem estrutura partidária",
-      equipo_tecnico: "Identificável e técnico",
-      integridad: "CSM limpo 100%",
+      gobernabilidad: "Sin estructura partidaria",
+      equipo_tecnico: "Identificable y técnico",
+      integridad: "CSM limpio 100%",
       plan_concreto: "Análisis plan JNE: muy detallado",
     },
     sources: {
       experiencia: "Ministerio Justicia",
       propuesta_tech: "Plan JNE",
-      anticorrupcion: "CSM - perfil highlight",
+      anticorrupcion: "CSM - perfil destacado",
       seguridad: "Ministerio, JNE",
       descentralizacion: "JNE",
       viabilidad: "Ipsos, Datum, CPI",
@@ -511,8 +507,8 @@ export const candidates = [
       sur: null,
     },
     notas:
-      "Ipsos: 3.9%, Datum: 3.5%, CPI: 3.7%. Terceira alta seguida. Virou em TikTok/Instagram - perfil 'candidata séria' entre jóvenes. Exministra Justicia (PPK), excongresista. Plan detallado: Autoridad Transparencia,flagrancia.",
-    riesgo: "Baixa viabilidad electoral, estrutura partidária fraca,mágoa redes pode não traduzir em votos",
+      "Ipsos: 3.9%, Datum: 3.5%, CPI: 3.7%. Tercera suba seguida. Viral en TikTok/Instagram - perfil 'candidata seria' entre jóvenes. Exministra Justicia (PPK), excongresista. Plan detallado: Autoridad Transparencia, flagrancia.",
+    riesgo: "Baja viabilidad electoral, estructura partidaria débil, viralización redes puede no traducir en votos",
   },
   {
     name: "Fernando Olivera",
@@ -533,14 +529,14 @@ export const candidates = [
     methodology: {
       experiencia: "Excongresista",
       propuesta_tech: "Análisis plan JNE: general",
-      anticorrupcion: "Historial médio",
-      seguridad: "Propostas populistas",
+      anticorrupcion: "Historial medio",
+      seguridad: "Propuestas populistas",
       descentralizacion: "Análisis plan JNE",
       viabilidad: "Promedio ponderado 3 encuestas",
-      gobernabilidad: "Sem representação",
-      equipo_tecnico: "Não identificado",
+      gobernabilidad: "Sin representación",
+      equipo_tecnico: "No identificado",
       integridad: "Perfil confrontacional",
-      plan_concreto: "Análisis plan JNE: geral",
+      plan_concreto: "Análisis plan JNE: general",
     },
     sources: {
       experiencia: "Congreso",
@@ -565,7 +561,7 @@ export const candidates = [
       sur: null,
     },
     notas:
-      "Ipsos: 2.8%, Datum: 2.4%, CPI: 2.4%. Sobe ligeramente. Perfil confrontacional. Bandera anticorrupción. Estilo agressivo em debates.",
-    riesgo: "Estilo confrontacional polariza,base eleitora reduzida",
+      "Ipsos: 2.8%, Datum: 2.4%, CPI: 2.4%. Sube ligeramente. Perfil confrontacional. Bandera anticorrupción. Estilo agresivo en debates.",
+    riesgo: "Estilo confrontacional polariza, base electoral reducida",
   },
 ];
