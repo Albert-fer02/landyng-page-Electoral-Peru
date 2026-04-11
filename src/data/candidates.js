@@ -1,5 +1,5 @@
-export const POLL_DATE = "2026-04-02";
-export const POLL_SOURCE = "Ipsos Perú21";
+export const POLL_DATE = "2026-04-04";
+export const POLL_SOURCE = "Ipsos Perú21 (Última publicable)";
 
 export const candidates = [
   {
@@ -21,15 +21,15 @@ export const candidates = [
     encuesta: 18.6,
     tendencia: "subiendo",
     regional: {
-      lima: 16,
-      oriente: 18,
-      norte: null,
-      centro: null,
+      lima: 18.2,
+      oriente: 36.9,
+      norte: 20.3,
+      centro: 22.2,
       interior: null,
     },
     notas:
-      "Ipsos 1-2 abril (tercer simulacro nacional): 18.6%. Lidera la medición con tendencia al alza. Cuarta candidatura. Investigada por lavado de activos (Lavamoto). Mayor antivoto. Bancada parlamentaria fuerte. Simulacro CPI: 13.1% votos emitidos. JNE confirmó sanción a FP por uso de fondos públicos.",
-    riesgo: "Antivoto masivo, proceso penal activo, legado autoritario",
+      "Ipsos 3-4 abril (última publicable): 15% intención, 18.6% simulacro. Líder absoluta. Tercerauparrow sostenida: 14.2% → 17.3% → 18.6%. Domina Oriente (36.9%) y Centro (22.2%). Cuarta candidatura. Antivoto 54-76%. Proceso penal Lava Jato. Bancada parlamentaria fuerte.",
+    riesgo: "Antivoto 54-76% (IEP/Ipsos), proceso penal activo por lavado de activos, legado autoritario",
   },
   {
     name: "Rafael López Aliaga",
