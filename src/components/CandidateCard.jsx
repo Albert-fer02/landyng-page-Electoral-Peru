@@ -50,7 +50,7 @@ export function CandidateCard({
         <div className="candidate-card__summary candidate-card__summary--metrics">
           <div className="candidate-card__meta">
             <span className="candidate-card__poll">
-              Encuesta <strong>{(candidate.pollAverage || candidate.encuesta || 0).toFixed(1)}%</strong>
+              Encuesta <strong>{Number(candidate.pollAverage || candidate.encuesta || 0).toFixed(1)}%</strong>
             </span>
             <TrendBadge trend={candidate.tendencia} />
           </div>
