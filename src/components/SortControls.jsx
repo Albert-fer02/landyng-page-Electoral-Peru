@@ -1,6 +1,6 @@
 const sortingOptions = [
-  { key: "score", label: "Por score ponderado" },
-  { key: "encuesta", label: "Por intención de voto" },
+  { key: "score", label: "Por score calidad" },
+  { key: "poll", label: "Por intención voto" },
 ];
 
 export function SortControls({ currentValue, onChange }) {

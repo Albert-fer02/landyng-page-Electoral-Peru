@@ -29,10 +29,7 @@ export function rankCandidates(candidates, criteria, sortBy) {
     }))
     .sort((left, right) => {
       if (sortBy === "poll") {
-        return (right.pollAverage || 0) - (left.pollAverage || 0);
-      }
-      if (sortBy === "encuesta") {
-        return right.encuesta - left.encuesta;
+        return (right.pollAverage || right.encuesta || 0) - (left.pollAverage || left.encuesta || 0);
       }
       return right.finalScore - left.finalScore;
     });
