@@ -76,17 +76,6 @@ export function CandidateCard({
         id={detailsId}
         className={`candidate-card__details${isExpanded ? " is-open" : ""}`}
       >
-        <section className="detail-panel" aria-labelledby={`${detailsId}-analysis`}>
-          <h3 id={`${detailsId}-analysis`} className="detail-panel__title">
-            Lectura analítica
-          </h3>
-          <ul className="candidate-card__notes">
-            {noteItems.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </section>
-
         <section className="detail-panel" aria-labelledby={`${detailsId}-criteria`}>
           <h3 id={`${detailsId}-criteria`} className="detail-panel__title">
             Desglose por criterio
@@ -107,6 +96,17 @@ export function CandidateCard({
               </div>
             ))}
           </div>
+        </section>
+
+        <section className="detail-panel" aria-labelledby={`${detailsId}-analysis`}>
+          <h3 id={`${detailsId}-analysis`} className="detail-panel__title">
+            Lectura analítica
+          </h3>
+          <ul className="candidate-card__notes">
+            {noteItems.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
         </section>
 
         <aside className="risk-box" aria-label="Riesgo principal">

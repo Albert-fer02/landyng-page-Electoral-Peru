@@ -1,4 +1,4 @@
-export const POLL_DATE = "2026-03-27";
+export const POLL_DATE = "2026-04-02";
 export const POLL_SOURCE = "Ipsos Perú21";
 
 export const candidates = [
@@ -18,8 +18,8 @@ export const candidates = [
       gobernabilidad: 7,
       plan_concreto: 5,
     },
-    encuesta: 11.0,
-    tendencia: "estable",
+    encuesta: 18.6,
+    tendencia: "subiendo",
     regional: {
       lima: 16,
       oriente: 18,
@@ -28,7 +28,7 @@ export const candidates = [
       interior: null,
     },
     notas:
-      "Líder Ipsos 26-27 marzo (11%). Estable post-debates. Cuarta candidatura. Investigada por lavado de activos (Lavamoto). Mayor antivoto. Bancada parlamentaria fuerte. Simulacro CPI: 13.1% votos emitidos. JNE confirmó sanción a FP por uso de fondos públicos.",
+      "Ipsos 1-2 abril (tercer simulacro nacional): 18.6%. Lidera la medición con tendencia al alza. Cuarta candidatura. Investigada por lavado de activos (Lavamoto). Mayor antivoto. Bancada parlamentaria fuerte. Simulacro CPI: 13.1% votos emitidos. JNE confirmó sanción a FP por uso de fondos públicos.",
     riesgo: "Antivoto masivo, proceso penal activo, legado autoritario",
   },
   {
@@ -47,8 +47,8 @@ export const candidates = [
       gobernabilidad: 6,
       plan_concreto: 3,
     },
-    encuesta: 9.0,
-    tendencia: "bajando",
+    encuesta: 10.9,
+    tendencia: "subiendo",
     regional: {
       lima: null,
       oriente: null,
@@ -57,7 +57,7 @@ export const candidates = [
       interior: 15,
     },
     notas:
-      "9% Ipsos (cayó de 10% pre-debate, 11.7% CPI). Pico 14.6% en febrero, caída sostenida. Exalcalde de Lima. Fuerte en capital (15% interior), débil en regiones. Discurso populista-conservador. Segundo debate: temas empleo y educación.",
+      "Ipsos 1-2 abril (tercer simulacro nacional): 10.9%. Sube respecto a marzo. Exalcalde de Lima. Fuerte en capital (15% interior), débil en regiones. Discurso populista-conservador. Segundo debate: temas empleo y educación.",
     riesgo: "Caída constante desde febrero, discurso errático, débil propuesta técnica",
   },
   {
@@ -76,7 +76,7 @@ export const candidates = [
       gobernabilidad: 2,
       plan_concreto: 2,
     },
-    encuesta: 7.0,
+    encuesta: 12.1,
     tendencia: "subiendo",
     regional: {
       lima: null,
@@ -86,7 +86,7 @@ export const candidates = [
       interior: null,
     },
     notas:
-      "3er lugar Ipsos (7%). Mayor crecimiento post-debate: 5% → 7%. Imitó a Alan García en debate, generó momentos virales. Acompañado por 'El Pollo' del humor. Mensaje propositivo resonó con electores. Fenómeno anti-política tradicional.",
+      "Ipsos 1-2 abril (tercer simulacro nacional): 12.1%. Continúa en alza tras el debate. Imitó a Alan García en debate, generó momentos virales. Acompañado por 'El Pollo' del humor. Mensaje propositivo resonó con electores. Fenómeno anti-política tradicional.",
     riesgo: "Cero experiencia ejecutiva, crecimiento volátil, estilo humorístico",
   },
   {
@@ -105,11 +105,11 @@ export const candidates = [
       gobernabilidad: 5,
       plan_concreto: 6,
     },
-    encuesta: 5.0,
+    encuesta: 5.6,
     tendencia: "estable",
     regional: {},
     notas:
-      "4to lugar Ipsos (5%). Crecimiento más marcado del campo: 0.2% enero → 5% marzo. Exministro de Defensa, perfil técnico. Propone sistema único de salud y Pacto Social. Simulacro CPI: 6.7% votos válidos. Estable post-primeros debates.",
+      "Ipsos 1-2 abril (tercer simulacro nacional): 5.6%. Se mantiene estable en el bloque medio. Exministro de Defensa, perfil técnico. Propone sistema único de salud y Pacto Social. Simulacro CPI: 6.7% votos válidos.",
     riesgo: "Partido nuevo, baja recordación, estructura partidaria débil",
   },
   {
@@ -128,11 +128,11 @@ export const candidates = [
       gobernabilidad: 5,
       plan_concreto: 6,
     },
-    encuesta: 4.0,
-    tendencia: "bajando",
+    encuesta: 4.4,
+    tendencia: "estable",
     regional: {},
     notas:
-      "5to lugar Ipsos (4%). Cayó de 5% pre-debate a 4%. Exrector UNI, doctor Economía UNAM. Propone ciencia y tech como motor. Modelo 5 hélices. Simulacro CPI: 10.5% votos válidos. No convenció en debates, evidenció limitaciones.",
+      "Ipsos 1-2 abril (tercer simulacro nacional): 4.4%. Se mantiene estable tras los debates. Exrector UNI, doctor Economía UNAM. Propone ciencia y tech como motor. Modelo 5 hélices. Simulacro CPI: 10.5% votos válidos.",
     riesgo: "Cayó post-debate, proceso penal pendiente, partido nuevo",
   },
   {
@@ -151,11 +151,11 @@ export const candidates = [
       gobernabilidad: 4,
       plan_concreto: 4,
     },
-    encuesta: 4.0,
-    tendencia: "bajando",
+    encuesta: 9.0,
+    tendencia: "subiendo",
     regional: {},
     notas:
-      "6to lugar Ipsos (4%). Congresista en funciones, exministro Pedro Castillo. Electores perciben que 'careta de político nuevo no es real'. Responsable por normas legislativas cuestionadas. Atacado como 'telonero de Castillo' en debate.",
+      "Ipsos 1-2 abril (tercer simulacro nacional): 9.0%. Sube con fuerza respecto a marzo. Congresista en funciones, exministro Pedro Castillo. Electores perciben que 'careta de político nuevo no es real'. Responsable por normas legislativas cuestionadas. Atacado como 'telonero de Castillo' en debate.",
     riesgo: "Asociación con gobierno Castillo, percepción de falta de autenticidad",
   },
   {
@@ -174,11 +174,11 @@ export const candidates = [
       gobernabilidad: 5,
       plan_concreto: 4,
     },
-    encuesta: 3.0,
+    encuesta: 4.3,
     tendencia: "subiendo",
     regional: {},
     notas:
-      "NUEVO en Ipsos: 3% (subió de 2%). Exalcalde de Lima (2003-2006), ingeniero civil. Postura anticorrupción, enfoque en obras e infraestructura. Scores estimados conservadoramente — sin evaluación formal completa. Retorno político tras años alejado.",
+      "Ipsos 1-2 abril (tercer simulacro nacional): 4.3%. Sigue en ascenso. Exalcalde de Lima (2003-2006), ingeniero civil. Postura anticorrupción, enfoque en obras e infraestructura. Scores estimados conservadoramente — sin evaluación formal completa. Retorno político tras años alejado.",
     riesgo: "Scores estimados, retorno político, partido con estructura limitada",
   },
   {
@@ -197,11 +197,11 @@ export const candidates = [
       gobernabilidad: 7,
       plan_concreto: 4,
     },
-    encuesta: 3.2,
-    tendencia: "estable",
+    encuesta: 5.1,
+    tendencia: "subiendo",
     regional: {},
     notas:
-      "3.2% CPI (sin medición Ipsos reciente). Empresario educativo, exgobernador La Libertad. Mayor estructura partidaria del país (APP). Antivoto alto (40%). Denuncias por plagio académico. Simulacro CPI: ~4.9% votos válidos.",
+      "Ipsos 1-2 abril (tercer simulacro nacional): 5.1%. Recupera impulso en la medición. Empresario educativo, exgobernador La Libertad. Mayor estructura partidaria del país (APP). Antivoto alto (40%). Denuncias por plagio académico. Simulacro CPI: ~4.9% votos válidos.",
     riesgo: "Antivoto alto, escándalos de plagio, sin dato Ipsos reciente",
   },
   {
@@ -220,12 +220,18 @@ export const candidates = [
       gobernabilidad: 2,
       plan_concreto: 8,
     },
-    encuesta: 2.0,
+    encuesta: 4.0,
     tendencia: "subiendo",
-    regional: {},
+    regional: {
+      lima: 5,
+      oriente: null,
+      norte: null,
+      centro: null,
+      interior: null,
+    },
     notas:
-      "2% Ipsos (subió de 0.5%). Exministra Justicia (PPK), excongresista. Tono firme y propuestas claras en debate. Plan articulado: Autoridad Transparencia, flagrancia. Hoja limpia. Viral en TikTok e Instagram — perfil de 'candidata seria' entre jóvenes. Fenómeno orgánico sin estructura partidaria fuerte.",
-    riesgo: "Viabilidad electoral limitada, viralidad redes puede no traducirse en votos",
+      "Ipsos 3-4 abril (última encuesta publicable): 4%. Tercera alza consecutiva post-debates. Exministra Justicia (PPK), excongresista. Tono firme y propuestas claras en debate. Plan articulado: Autoridad Transparencia, flagrancia. Hoja limpia. Viral en TikTok e Instagram — perfil de 'candidata seria' entre jóvenes. Fenómeno orgánico sin estructura partidaria fuerte.",
+    riesgo: "Crece en encuestas (4%), pero estructura partidaria débil",
   },
   {
     name: "Fernando Olivera",
@@ -243,11 +249,11 @@ export const candidates = [
       gobernabilidad: 3,
       plan_concreto: 4,
     },
-    encuesta: 2.0,
+    encuesta: 2.8,
     tendencia: "subiendo",
     regional: {},
     notas:
-      "2% Ipsos (subió de 'Otros'). Excongresista, perfil confrontacional. Tono agresivo en debate le dio réditos. Bandera anticorrupción. Yohny Lescano lo atacó como 'sobón de Fujimori' en debate.",
+      "Ipsos 1-2 abril (tercer simulacro nacional): 2.8%. Sigue al alza. Excongresista, perfil confrontacional. Tono agresivo en debate le dio réditos. Bandera anticorrupción. Yohny Lescano lo atacó como 'sobón de Fujimori' en debate.",
     riesgo: "Estilo confrontacional polariza, base electoral reducida",
   },
 ];
