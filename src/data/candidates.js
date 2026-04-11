@@ -90,7 +90,7 @@ export const candidates = [
     riesgo: "Cero experiencia ejecutiva, crecimiento volátil, estilo humorístico",
   },
   {
-    name: "Jorge Nieto Montesinos",
+name: "Jorge Nieto Montesinos",
     party: "Partido del Buen Gobierno",
     color: "#2E8B57",
     scores: {
@@ -99,18 +99,24 @@ export const candidates = [
       anticorrupcion: 7,
       seguridad: 6,
       descentralizacion: 6,
-      viabilidad: 5,
+      viabilidad: 4,
       equipo_tecnico: 7,
       integridad: 7,
       gobernabilidad: 5,
       plan_concreto: 6,
     },
-    encuesta: 5.6,
+    encuesta: 4.5,
     tendencia: "estable",
-    regional: {},
+    regional: {
+      lima: 4,
+      oriente: null,
+      norte: 5,
+      centro: 6,
+      interior: null,
+    },
     notas:
-      "Ipsos 1-2 abril (tercer simulacro nacional): 5.6%. Se mantiene estable en el bloque medio. Exministro de Defensa, perfil técnico. Propone sistema único de salud y Pacto Social. Simulacro CPI: 6.7% votos válidos.",
-    riesgo: "Partido nuevo, baja recordación, estructura partidaria débil",
+      "Ipsos 3-4 abril (última publicable): 4% intención. Cae ligeramente desde marzo (5%). Exministro de Defensa, perfil técnico. Propone sistema único de salud y Pacto Social. Buen equipo técnico. Sin estructura partidaria. Tercera posición en sur según algunas encuestas. IEP lo confirma: mayoría en sector D/E.",
+    riesgo: "Partido nuevo, baja recordación, sin estructura regional, sin momentum post-debate",
   },
   {
     name: "Alfonso López Chau",
