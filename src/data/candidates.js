@@ -607,9 +607,9 @@ export const candidates = [
       integridad: "CSM",
       plan_concreto: "JNE",
     },
-    polls: { ipsos: 2.8, datum: 1.5, cpi: 1.5 },
-    pollAverage: 2.0,
-    tendencia: "estable",
+    polls: { ipsos: 2.8, datum: 2.6, cpi: 1.5 },
+    pollAverage: 2.3,
+    tendencia: "subiendo",
     regional: {
       lima: null,
       oriente: null,
@@ -618,7 +618,7 @@ export const candidates = [
       sur: null,
     },
     notas:
-      "Ipsos: 2.8%. Excongresista, exdirector INDECO. Perfil populista. Tercera fuerza en algunas encuestas. Estructura débil.",
+      "Ipsos(simulacro): 2.8%, Datum: 2.6%, CPI: 1.5%. Excongresista, exdirector INDECO. Perfil populista. Sube ligeramente (+0.6pts). Estructura débil.",
     riesgo: "Poco conocido, estructura débil, pocas propuestas concretas",
   },
 ];
