@@ -618,7 +618,7 @@ export const candidates = [
       sur: null,
     },
     notas:
-      "Ipsos(simulacro): 2.8%, Datum: 2.6%, CPI: 1.5%. Excongresista, exdirector INDECO. Perfil populista. Sube ligeramente (+0.6pts). Estructura débil.",
+      "Ipsos(simulacro): 2.8%, Datum: 2.6%. Excongresista, exdirector INDECO. Perfil populista. Momentum positivo (+0.6pts). Propuestas seguridad: 6 penales máxima seguridad. Estructura débil.",
     riesgo: "Poco conocido, estructura débil, pocas propuestas concretas",
   },
 ];
