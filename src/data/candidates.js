@@ -1,3 +1,6 @@
+export const POLL_DATE = "2026-04-04";
+export const POLL_SOURCE = "Ipsos Perú21 (Última publicable)";
+
 export const METHODOLOGY = {
   version: "2.0",
   lastUpdate: "2026-04-11",
